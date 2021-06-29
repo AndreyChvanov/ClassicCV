@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import cv2
 from matplotlib.patches import Ellipse
 
+#paper: Xie, Yonghong, and Qiang Ji. “A new efficient ellipse detection method.” Pattern Recognition, 2002. Proceedings. 16th International Conference on. Vol. 2. IEEE, 2002 
+
 
 def load_image(path):
     im = cv2.imread(path)
