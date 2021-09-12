@@ -10,17 +10,7 @@ import matplotlib.pyplot as plt
 class HarrisCornerDetector():
     def __init__(self, k, image):
         self.k = k
-        self.image = image
-        Iy, Ix = utils.Sobel_Filter(image)
-        Ix_2 = Ix * Ix
-        Iy_2 = Iy * Iy
-        IxIy = Ix * Iy
-        d = np.array([[1, 4, 6, 4, 1]]) / 16
-        W = np.dot(d.T, d)
-        W = np.power(W, 2)
-        self.Ix_2 = cv2.filter2D(Ix_2, ddepth=-1, kernel=W)
-        self.Iy_2 = cv2.filter2D(Iy_2, ddepth=-1, kernel=W)
-        self.IxIy = cv2.filter2D(IxIy, ddepth=-1, kernel=W)
+
 
     def filter(self, i, j):
         M = np.array(([self.Ix_2[i, j], self.IxIy[i, j]], [self.IxIy[i, j], self.Iy_2[i, j]]))
